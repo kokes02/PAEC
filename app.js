@@ -15,9 +15,6 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Conectado a MongoDB Atlas'))
   .catch(err => console.error('Error al conectar a MongoDB:', err));
 
-.then(() => console.log('Conectado a MongoDB'))
-.catch(err => console.error('Error al conectar a MongoDB:', err));
-
 // Crear bote (Alta)
 app.post('/botes', async (req, res) => {
   try {
