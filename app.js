@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const Bote = require('./models/Bote');
+const Bote = require('./mi-pagina-web/models/Bote');
 
 const app = express();
 
