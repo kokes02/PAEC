@@ -11,10 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 // Sirve archivos estáticos desde carpeta "public"
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost:27017/mipagina', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Conectado a MongoDB Atlas'))
+  .catch(err => console.error('Error al conectar a MongoDB:', err));
+
 .then(() => console.log('Conectado a MongoDB'))
 .catch(err => console.error('Error al conectar a MongoDB:', err));
 
