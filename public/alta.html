@@ -4,65 +4,92 @@
   <meta charset="UTF-8" />
   <title>Alta de Botes</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f1f3f5;
+    :root {
+      --primary-color: #1e88e5;
+      --primary-dark: #1565c0;
+      --secondary-color: #546e7a;
+      --background: #e3f2fd;
+      --text-color: #263238;
+    }
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
     header {
-      background-color: #28a745;
+      background-color: var(--primary-color);
       color: white;
-      padding: 20px;
+      padding: 25px 20px;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
     main {
-      max-width: 500px;
-      margin: 40px auto;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .form-container {
       background: white;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
     }
     h1 {
-      margin-top: 0;
+      margin-bottom: 20px;
       text-align: center;
+      font-size: 24px;
+      color: var(--primary-dark);
     }
     form input {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+      font-size: 16px;
     }
     form button {
       width: 100%;
-      padding: 10px;
-      background-color: #28a745;
+      padding: 12px;
+      background-color: var(--primary-color);
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 16px;
-      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
     }
     form button:hover {
-      background-color: #218838;
+      background-color: var(--primary-dark);
     }
     .volver {
       margin-top: 20px;
       text-align: center;
     }
     .volver button {
-      background-color: #6c757d;
+      background-color: var(--secondary-color);
       color: white;
-      padding: 10px 20px;
+      padding: 10px 24px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
     }
     .volver button:hover {
-      background-color: #5a6268;
+      background-color: #37474f;
     }
   </style>
 </head>
@@ -71,14 +98,16 @@
     <h1>Alta de Botes</h1>
   </header>
   <main>
-    <form id="formAlta">
-      <input type="text" name="ubicacion" placeholder="Ubicación del bote" required />
-      <input type="text" name="tipoResiduos" placeholder="Tipo de residuos" required />
-      <input type="text" name="capacidad" placeholder="Capacidad (Litros)" required />
-      <button type="submit">Registrar Bote</button>
-    </form>
-    <div class="volver">
-      <button onclick="window.location.href='index.html'">Volver al Menú Principal</button>
+    <div class="form-container">
+      <form id="formAlta">
+        <input type="text" name="ubicacion" placeholder="Ubicación del bote" required />
+        <input type="text" name="tipoResiduos" placeholder="Tipo de residuos" required />
+        <input type="text" name="capacidad" placeholder="Capacidad (Litros)" required />
+        <button type="submit">Registrar Bote</button>
+      </form>
+      <div class="volver">
+        <button onclick="window.location.href='index.html'">Volver al Menú Principal</button>
+      </div>
     </div>
   </main>
 
